@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="names">Date of Birth</label>
-                            <input type="text" name="dob" id="" class="form-control" value="{{ $user[0]->dob }}">
+                            <input type="text" name="dob" class="form-control" value="{{ $user[0]->dob }}">
                         </div>
                         <button class="btn btn-primary">Update Information</button>
 

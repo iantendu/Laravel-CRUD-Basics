@@ -24,7 +24,7 @@ class UserDetailsController extends Controller
     }
     public function edit($id)
     {
-        return view('edit')->with('user', UserDetails::where('id', $id)->get());
+        return view('edit')->with(['user' => UserDetails::where('id', $id)->get()]);
     }
     public function saveEdit(Request $request)
     {
@@ -37,7 +37,13 @@ class UserDetailsController extends Controller
             $user->save();
 
 
-            redirect('/')->with('data', UserDetails::all());
+            return redirect('/')->with('data', UserDetails::all());
         }
+    }
+    public function delete($id)
+    {
+        $user = UserDetails::where('id', $id);
+        $user->delete();
+        return redirect('/')->with('data', UserDetails::all());
     }
 }

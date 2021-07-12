@@ -29,3 +29,4 @@ Route::get('/admin', [DefaultController::class, 'admin']);
 Route::post('/save', [UserDetailsController::class, 'save']);
 Route::get('edit/{id}', [UserDetailsController::class, 'edit']);
 Route::post('edit/save', [UserDetailsController::class, 'saveEdit']);
+Route::get('/delete/{id}', [UserDetailsController::class, 'delete']);
